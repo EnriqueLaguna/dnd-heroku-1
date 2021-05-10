@@ -1,0 +1,80 @@
+
+body {
+	background: url("https://wallpapercave.com/wp/wp4110712.jpg") no-repeat center center fixed;
+	background-size: cover;
+	transition: background-image 0.2s ease-in-out;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+#carousel {
+	position: relative;
+	height: 80vh;
+	overflow: hidden;
+}
+
+#carousel div {
+	position: absolute;
+	transition: transform 1s, top 1s, opacity 1s, z-index 0s;
+	opacity: 1;
+	transform: translateY(-0%);
+}
+
+#carousel div img {
+	max-width: 300px;
+	min-width: 150px;
+	width: 20vw;
+	height: 25vh;
+}
+
+#carousel div.hideLeft {
+	top: 0%;
+	opacity: 0;
+	transform: translateY(-20%) translateX(6vw);
+}
+
+#carousel div.prevLeftSecond {
+	z-index: 4;
+	top: 10%;
+	transform: translateY(-20%) translateX(6vw);
+	opacity: .5;
+}
+
+#carousel div.prev {
+	z-index: 5;
+	top: 20%;
+	transform: translateY(-20%) translateX(3vw);
+	opacity: .7;
+}
+
+#carousel div.selected {
+	z-index: 10;
+	top: 30%;
+	transform: translateY(-10%) translateX(0);
+}
+
+#carousel div.next {
+	z-index: 5;
+	top: 40%;
+	transform: translateY(-10%) translateX(3vw);
+	opacity: .7;
+}
+
+
+#carousel div.nextRightSecond {
+	z-index: 4;
+	top: 50%;
+	transform: translateY(-10%) translateX(6vw);
+	opacity: .5;
+}
+
+#carousel div.hideRight {
+	top: 60%;
+	opacity: 0;
+	transform: translateY(-10%) translateX(6vw);
+}
+
+#carousel div {
+	width: 90vw;
+	height: 25vh;
+}

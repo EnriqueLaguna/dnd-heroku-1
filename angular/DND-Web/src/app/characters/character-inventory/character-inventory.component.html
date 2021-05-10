@@ -1,0 +1,12 @@
+<div class="container-fluid"  id="Inventario">
+    <div class="container">
+        <h1>INVENTARIO</h1>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let objeto of item">
+            <h4>Nombre: <p>{{objeto.objName}}</p></h4>
+            <h4>Descripcion:<p>{{objeto.objDesc}}</p></h4>
+            <h4>Nivel: <p>{{objeto.objLevel}}</p></h4>
+        </li>
+    </ul>
+</div>

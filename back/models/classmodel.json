@@ -1,0 +1,10 @@
+{
+    "id": 0,
+    "name": "Barbarian",
+    "smallDescription": "A fierce warrior of primitive background who can enter a battle rage",
+    "hitDie": "d12",
+    "primaryAbility": "Strength",
+    "saves": "Strength & Constitution",
+    "logo": "https://media-waterdeep.cursecdn.com/avatars/10/0/636336416778392507.jpeg",
+    "background": "https://wallpapercave.com/wp/wp2770248.jpg"
+}

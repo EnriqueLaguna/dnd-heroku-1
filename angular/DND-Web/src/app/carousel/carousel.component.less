@@ -1,0 +1,80 @@
+#carousel {
+	position: relative;
+	height: 80vh;
+	overflow: hidden;
+}
+
+#carousel div {
+	position: absolute;
+	transition: transform 1s, left 1s, opacity 1s, z-index 0s;
+	opacity: 1;
+	transform: translateX(-50%);
+}
+
+#carousel div img {
+	min-height: 400px;
+	min-width: 200px;
+	width: 20vw;
+}
+
+#carousel div.hideLeft {
+	left: 0%;
+	opacity: 0;
+	transform: translateY(12vh) translateX(-50%);
+}
+
+
+
+#carousel div.prevLeftSecond {
+	z-index: 4;
+	left: 15%;
+	transform: translateY(12vh) translateX(-50%);
+	opacity: .5;
+}
+
+#carousel div.prev {
+	z-index: 5;
+	left: 30%;
+	transform: translateY(6vh) translateX(-50%);
+	opacity: .7;
+}
+
+#carousel div.selected {
+	z-index: 10;
+	left: 50%;
+	transform: translateY(0) translateX(-50%);
+}
+
+#carousel div.next {
+	z-index: 5;
+	left: 70%;
+	transform: translateY(6vh) translateX(-50%);
+	opacity: .7;
+}
+
+
+#carousel div.nextRightSecond {
+	z-index: 4;
+	left: 85%;
+	transform: translateY(12vh) translateX(-50%);
+	opacity: .5;
+}
+
+#carousel div.hideRight {
+	left: 100%;
+	opacity: 0;
+	transform: translateY(12vh) translateX(-50%);
+}
+
+#carousel div.card-body {
+	position: relative;
+	transform: translateX(0%);
+}
+
+#carousel div {
+	width: fit-content;
+}
+
+#carousel img{
+	object-fit: cover;
+}

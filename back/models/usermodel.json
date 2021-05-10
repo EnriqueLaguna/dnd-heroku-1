@@ -1,0 +1,29 @@
+{
+    "id": "454d47f8f8b42c9eceb8190c69f7ac99",
+    "key": "454d47f8f8b42c9eceb8190c69f7ac99",
+    "value": {
+        "rev": "1-41d9eb63d773f36d218970dcd0c915c2"
+    },
+    "doc": {
+        "_id": "454d47f8f8b42c9eceb8190c69f7ac99",
+        "_rev": "1-41d9eb63d773f36d218970dcd0c915c2",
+        "userName": "nom-47",
+        "email": "correo0@iteso.mx",
+        "password": "hola123",
+        "image": "https://randomuser.me/api/portraits/women/1.jpg",
+        "characters": [
+            {
+                "id": "asdas",
+                "raceId": 0,
+                "classId": 0,
+                "Name": "Mono",
+                "Level": 1,
+                "Inventory": [["Sword", 1, "Sword_Desc"], ["Arrow", 10, "Arrow_desc"]]
+            },
+            {
+                "id": "oai"
+            }
+        ],
+        "token": "qiwefiufwh"
+    }
+}

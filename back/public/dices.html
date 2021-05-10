@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Dices Throws</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./css/dices.css">
+    <script type="module" src="js/dices.js"></script>
+    <script src="js/jison/dice.js"></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <div class="nav navbar-nav">
+            <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="characters.html">Characters</a>
+            <a class="nav-item nav-link" href="classes.html">Classes</a>
+            <a class="nav-item nav-link" href="races.html">Races</a>
+            <a class="nav-item nav-link" href="index.html">Login</a>
+            <a class="nav-item nav-link" href="dices.html">Dice Throws</a>
+        </div>
+    </nav>
+
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="card text-white bg-dark text-center">
+            <div class="card-body">
+                <h4 class="card-title">Dice rolls</h4>
+                <p class="card-text">Write here your rolls</p>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Roll:</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="1d20" aria-label="Username"
+                        aria-describedby="basic-addon1" id="rollInput">
+                </div>
+                <a class="btn btn-success mb-3" id="roll">Roll!</a>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Result:</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Your result will show here"
+                        aria-label="Username" aria-describedby="basic-addon1" readonly="readonly" id="rollOutput">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            $('#roll').on('click', function () {
+                try {
+                    var result = dice.parse($('#rollInput').val());
+                    $('#rollOutput').val(result);
+                } catch (e) {
+                    $('#rollOutput').val(String(e));
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

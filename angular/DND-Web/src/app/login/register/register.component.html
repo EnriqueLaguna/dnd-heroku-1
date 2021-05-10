@@ -1,0 +1,32 @@
+<div class="d-flex justify-content-center align-items-center">
+  <div class="card">
+    <div class="card-body my-auto">
+      <img src="https://upload.wikimedia.org/wikipedia/en/8/8e/Dungeons_%26_Dragons_5th_Edition_logo.svg"
+        class="img-fluid" alt="">
+      <br method="POST" id="createUserForm">
+      <input type="text" id="UserName" class="form-control" placeholder="Username" aria-describedby="helpId"
+        [(ngModel)]="user.userName">
+      <input type="email" id="regEmail" class="form-control mt-3" placeholder="Correo" aria-describedby="helpId"
+        [(ngModel)]="user.email" required>
+      <input type="password" id="password1" class="form-control mt-3" placeholder="Contraseña" aria-describedby="helpId"
+        [(ngModel)]="user.password" (ngModelChange)="passChange()" required>
+      <input type="password" id="password2" class="form-control mt-3" placeholder="Confirmar contraseña"
+        aria-describedby="helpId" [(ngModel)]="user.password_c" (ngModelChange)="passChange()" required>
+
+      <div class="alert alert-warning" *ngIf="!matchingPasswords">
+        Passwords do not match
+      </div>
+      <div class="alert alert-warning" *ngIf="!passIsMinLength">
+        Password is too short (minimum of 4)
+      </div>
+      <div id="responseMSG"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" routerLink="/login" routerLinkActive="active">Return</button>
+        <button type="submit" id="createUserBtn" class="btn btn-success" disabled *ngIf="!canLogin">Register</button>
+        <button type="submit" id="createUserBtn" class="btn btn-success" *ngIf="canLogin"
+          (click)="login()">Register</button>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>

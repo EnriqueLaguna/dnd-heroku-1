@@ -1,0 +1,59 @@
+<div class="row mt-3 d-flex justify-content-center">
+  <img class=" align-middle img-fluid w-35" src="../../assets/img/characterCreate.png">
+</div>
+
+<div class="row mt-3 d-flex justify-content-center">
+  <a routerLink="/characters" routerLinkActive="active" button type="button" class="btn btn-primary btn-lg">Characters</a>
+</div>
+
+<div class="container-lg justify-content-center" id="createCharactersForm">
+  <div class="row-fluid">
+    <div class="col-xs-12">
+      <div class="container">
+        <h1 class="text-warning text-center display-4">Datos de tu personaje</h1>
+      </div>
+      <div class="container" id=characterAttributes>
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" class="form-control" placeholder="Nombre" [(ngModel)]="characterForm.name" nombre="nombre" required>
+          <label for="class">Clase</label>
+          <select class="form-control" id="classSelection" [(ngModel)]='characterForm.class' required>
+            <option>Barbarian</option>
+            <option>Bard</option>
+            <option>Cleric</option>
+            <option>Druid</option>
+            <option>Fighter</option>
+            <option>Ranger</option>
+            <option>Warlock</option>
+            <option>Paladin</option>
+          </select>
+          <label for="race">Raza</label>
+          <input type="text" class="form-control" placeholder="Raza" [(ngModel)]="characterForm.race" raza=race required>
+          <label for="hp">Vida</label>
+          <input type="number" class="form-control" placeholder="hp" [(ngModel)]="characterForm.hp" hp="hp" (ngModelChange)="hpChange()" aria-describedby="helpId" required>
+
+          <div class="alert alert-warning" *ngIf='!hpHigherThanZero'>
+            Hp is lower than zero
+          </div>
+
+          <label for="imagen">Imagen</label>
+          <input type="url" class="form-control" placeholder="http://tuimagen" pattern="http://*" [(ngModel)]="characterForm.image">
+
+          <label for="nombre">Nivel</label>
+          <input type="number" class="form-control" placeholder="Nivel" [(ngModel)]="characterForm.level" (ngModelChange)="hpChange()" required> 
+
+          <div class="alert alert-warning" *ngIf='!levelHigherThanZero'>
+            Level is lower than zero
+          </div>
+
+          <div class="row justify-content-center" id="cosaDelBoton">
+            <div class="col-md text-center">
+              <a routerLink="/characters" routerLinkActive="active" button type="button" class="btn btn-primary btn-lg" *ngIf="canCreateChar"
+              (click)="createCharacter()">Crear personaje!</a>
+            </div>   
+          </div>
+        </div>   
+      </div>
+    </div>
+  </div>
+</div>

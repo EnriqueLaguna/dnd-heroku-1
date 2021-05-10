@@ -1,0 +1,12 @@
+applications:
+- instances: 1
+  timeout: 300
+  name: DND_Proyecto
+  buildpack: sdk-for-nodejs
+  command: node server.js
+  disk_quota: 1G
+  memory: 128MB
+  domain: mybluemix.net
+  host: dndweb
+  env:
+    OPTIMIZE_MEMORY: true

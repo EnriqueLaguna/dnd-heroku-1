@@ -1,0 +1,21 @@
+<div class="d-flex justify-content-center align-items-center">
+  <div class="card">
+    <div class="card-body my-auto">
+      <img src="https://upload.wikimedia.org/wikipedia/en/8/8e/Dungeons_%26_Dragons_5th_Edition_logo.svg"
+        class="img-fluid" alt="">
+      <form method="POST" id="LoginForm">
+        <input type="email" name="email" id="loginEmail" class="form-control mt-3" placeholder="Correo"
+          aria-describedby="helpId" required>
+        <input type="password" name="password" id="loginPassword" class="form-control mt-3" placeholder="Contraseña"
+          aria-describedby="helpId" required>
+        <div id="LoginResponseMSG"></div>
+
+
+        <br>
+        <button type="button" class="btn btn-secondary" routerLink="/register" routerLinkActive="active">Registrarse</button>
+        <button type="submit" id="LoginBtn" class="btn btn-success" routerLink="/characters" routerLinkActive="active" disabled >Login</button>
+        <button typ="button" class="btn btn-danger" (click)="signWithGoogle()">Login with Google</button>
+      </form>
+    </div>
+  </div>
+</div>

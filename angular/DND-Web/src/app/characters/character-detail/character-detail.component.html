@@ -1,0 +1,34 @@
+<div class="container-fluid" *ngIf="!!character">
+    <div class="container" id="characterDetailComponent">
+        <div class="row justify-content-center">
+            <div class="col-4" >
+                <div class="card">
+                    <img class="card-img-top" [src]="character.charImage" alt="Card Image cap">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush align-right" id="attributeList">
+                            <li class="list-group-item"><h3>Nombre:</h3><h4>{{character.charName}}</h4></li>
+                            <li class="list-group-item"><h3>Clase</h3><h4>{{character.charClass}}</h4></li>
+                            <li class="list-group-item"><h3>HP</h3><h4>{{character.charHp}}</h4></li>
+                            <li class="list-group-item"><h3>Nivel</h3><h4>{{character.charLevel}}</h4></li>
+                            <a routerLink="/characters/inventory" rotuerLinkActive="active" class="list-group-item list-group-item-primary d-flex justify-content-between align-items-center">
+                                <h3>Inventory</h3>
+                                <span class="badge bg-primary rounded-pill"><h4 style="color: white;">{{character.charInventory.length}}</h4></span>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" *ngIf="character.charInventory.length > 0">
+        <app-character-inventory [item]="character.charInventory"></app-character-inventory>
+    </div>
+    
+    <div class="row mt-3 d-flex justify-content-center">
+        <button type="button" class="btn btn-primary btn-lg" routerLink="/characters" routerLinkActive="active">Characters</button>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
+    

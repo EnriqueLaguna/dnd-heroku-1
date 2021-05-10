@@ -1,0 +1,33 @@
+<div class="container-fluid" id="charactersImage">
+    <div class="row mt-3 d-flex justify-content-center">
+        <img class=" align-middle img-fluid w-50" src="../../assets/img/characterTitle.png">
+    </div>
+</div>
+
+<div class="container-fluid" id="createChar">
+    <div class="row gy-5 justify-content-center">
+        <div class="col-lg text-center">
+            <a routerLink="/character-create" routerLinkActive="active" button type="button" class="btn btn-primary">Crear personaje</a>
+        </div>
+    </div>
+</div>
+<div class="container-xl" id="carrusel">
+    <div class="row">
+        <div class="col-md-12 py-3">
+            <ngb-carousel *ngIf="characters_array">
+                <ng-template ngbSlide *ngFor="let char of characters_array">
+                    <img [src]="char.charImage" style="width: 15em; height: 15em;">
+                    <div class="carousel-caption">
+                        <h3>{{char.charName}}</h3>
+                        <p [innerText]="char.charClass"></p>
+                        <button class="btn btn-primary" [routerLink]="['/characters/'+ char.id]" routerLinkActive="active">Details</button>
+                        <button class="btn btn-danger" [attr.data-charid]="char.id" (click)="deleteChar($event)">Matar</button>
+                        <button class="btn btn-success" [routerLink]="['/character-modify/' + char.id]" routerLinkActive="active">Modificar</button>
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

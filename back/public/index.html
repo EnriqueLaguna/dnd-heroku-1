@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office"
+    xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+    <title>Home</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+        integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
+    <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">GONZALEZ OCEGUERA, OSCAR JOSE</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:xd_Signature msdt:dt="string"></mso:xd_Signature>
+<mso:TemplateUrl msdt:dt="string"></mso:TemplateUrl>
+<mso:Order msdt:dt="string">911500.000000000</mso:Order>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">GUTIERREZ PRECIADO, LUIS FERNANDO</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:xd_ProgID msdt:dt="string"></mso:xd_ProgID>
+<mso:ContentTypeId msdt:dt="string">0x0101009AF89F552A2F4149A5B5EC1687935FB5</mso:ContentTypeId>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <div class="nav navbar-nav">
+            <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="characters.html">Characters</a>
+            <a class="nav-item nav-link" href="classes.html">Classes</a>
+            <a class="nav-item nav-link" href="races.html">Races</a>
+            <a class="nav-item nav-link" href="index.html">Login</a>
+            <a class="nav-item nav-link" href="dices.html">Dice Throws</a>
+        </div>
+    </nav>
+
+
+    <!-- Login Box -->
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="card">
+            <div class="card-body my-auto">
+                <img src="https://upload.wikimedia.org/wikipedia/en/8/8e/Dungeons_%26_Dragons_5th_Edition_logo.svg"
+                    class="img-fluid" alt="">
+                <form method="POST" id="LoginForm">
+                    <input type="email" name="email" id="loginEmail" class="form-control mt-3" placeholder="Correo"
+                        aria-describedby="helpId" required>
+                    <input type="password" name="password" id="loginPassword" class="form-control mt-3"
+                        placeholder="Contraseña" aria-describedby="helpId" required>
+                    <div id="LoginResponseMSG"></div>
+
+
+                    <br>
+                    <button type="button" class="btn btn-secondary" data-toggle="modal"
+                        data-target="#registerModal">Registrarse</button>
+                    <button type="submit" id="LoginBtn" class="btn btn-success " disabled>Login</button>
+                    <button typ="button" class="btn btn-danger" id='google-login'>Login with Google</button>
+            </div>
+            </form>
+        </div>
+    </div>
+    </div>
+
+    <!-- Modal Register -->
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModal"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModal">Register</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form method="POST" id="createUserForm">
+                        <input type="text" id="UserName" class="form-control" placeholder="Username"
+                            aria-describedby="helpId">
+                        <input type="email" id="regEmail" class="form-control mt-3" placeholder="Correo"
+                            aria-describedby="helpId" required>
+                        <input type="password" id="password1" class="form-control mt-3"
+                            placeholder="Contraseña" aria-describedby="helpId" required>
+                        <input type="password" id="password2" class="form-control mt-3"
+                            placeholder="Confirmar contraseña" aria-describedby="helpId" required>
+                        <input type="text" id="Image" class="form-control mt-3" placeholder="Image URL"
+                            aria-describedby="helpId">
+
+                        <div id="responseMSG"></div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" id="createUserBtn" class="btn btn-success " disabled>Register</button>
+                            <br>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
